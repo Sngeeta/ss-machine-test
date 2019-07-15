@@ -16,8 +16,8 @@ h1{
   font-weight: 600;
   color: $font-white;
   .maxeon-banner &{
-    @media (max-width: 991px){
-      font-size: 45px;
+    @media (max-width: 767px){
+      font-size: 60px;
     }
   }
   .maxeon-chatbox--popup-header &{
@@ -83,6 +83,7 @@ p{
     }
   }
   .show, .collapsing{
+    z-index: 999999;
     background: $background-light;
     .navbar-nav{
       margin: 0 15px;
@@ -139,9 +140,9 @@ p{
   background-size: cover;
   .maxeon-banner--text{
     padding: 80px 20px;
-    max-width: 300px;
+    max-width: 250px;
     @media (max-width: 991px){
-      padding: 65px 15px;
+      padding: 65px 0;
     }
   }
 }
@@ -167,10 +168,10 @@ p{
     -webkit-animation: vibrate-1 0.2s linear 5 ;
     animation: vibrate-1 0.2s linear 5 ;
     @media (max-width: 767px){
-      bottom: 15px;
-      right: 10px;
-      width: 50px;
-      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      width: 65px;
+      height: 65px;
     }
     &:hover{
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -181,7 +182,7 @@ p{
     background-image: url("Assets/Images/Sparrow-Bird.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 20px;
+    background-size: 25px;
     @media (max-width: 767px){
       background-size: 15px;
     }
@@ -190,7 +191,7 @@ p{
     background-image: url("Assets/Images/close-button.png");
     background-repeat: no-repeat;
     background-position: center; 
-    background-size: 18px;
+    background-size: 16px;
     -moz-transform:rotate(90deg);
     -webkit-transform:rotate(90deg);
     transform:rotate(90deg);
@@ -204,7 +205,7 @@ p{
     display: none;
   }
   .maxeon-chatbox--popup-open{
-    z-index: 9999999999999;
+    z-index: 9999;
     display: block;
     background: $font-white;
     position: fixed;
@@ -222,7 +223,7 @@ p{
     @media (max-width: 767px){
       width: 300px;
       right: 10px;
-      bottom: 60px;
+      bottom: 80px;
     }
     .maxeon-chatbox--popup-body{
       display: flex;
@@ -402,7 +403,6 @@ p{
           height: 15px;
           right: 15px;
           top: 35%;
-          
           width: 15px;
         }
       }

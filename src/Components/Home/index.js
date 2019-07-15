@@ -7,37 +7,66 @@ class HomePage extends Component {
         isToggleOn: true,
         conversation: false,
         inputValue: '',
+        displayValue: '',
         dataset:{
             slip:{
                 advice: '',
             }
         }
     }
+
     popUpClick = () => {
         this.setState({
             isToggleOn:!this.state.isToggleOn
         })
     } 
+
     handleClick = () => {
         this.setState({
             conversation:!this.state.conversation
         })
-    }  
+    } 
+    
+    onChangeHandler = (e) => {
+        this.setState(
+            {
+                inputValue : e.target.value
+            } 
+        )        
+    }
    
     SearchSubmit(e){
         var code = e.keyCode || e.which;
         if(code === 13) {
-          document.getElementById('enter').click()
-                this.setState(
-                    {
-                        inputValue : event.target.value
-                    } 
-                )
-                console.log(event.target.value)
+            this.setState(
+                {
+                    inputValue : '',
+                    displayValue: event.target.value
+                } 
+            )
+            this.adviceslipResponse()
 
         }
-    } 
-    componentDidMount(){
+    }
+
+    onClickButtonHandler = () => {
+        this.setState(
+            {
+                inputValue : '',
+                displayValue: document.getElementById('submitButton').value
+            } 
+        )
+        this.adviceslipResponse()        
+    }
+
+    adviceslipResponse = () => {
+        this.setState({
+            dataset:{
+                slip:{
+                    advice: '',
+                }
+            }            
+        })
         let url = `https://api.adviceslip.com/advice`
         axios.get(url)
         .then(response => {
@@ -49,7 +78,8 @@ class HomePage extends Component {
         }).catch(error => {
           console.log(error)
         });
-      }
+    }
+
     render() {
         
         return (
@@ -75,9 +105,9 @@ class HomePage extends Component {
                                 :
                                     <div className="maxeon-chatbox--conversation ">
                                      <div className="maxeon-chatbox--conversation-box">
-                                     {this.state.inputValue ? 
+                                     {this.state.displayValue ? 
                                         <div>
-                                            <div className="maxeon-chatbox--conversation-left slide-left">{this.state.inputValue}</div>
+                                            <div className="maxeon-chatbox--conversation-left slide-left">{this.state.displayValue}</div>
                                             <div className="clearfix"></div>
                                             <div className="maxeon-chatbox--conversation-right slide-righti">{this.state.dataset.slip.advice.length !== 0 ? this.state.dataset.slip.advice : '...'}</div>
                                         </div>
@@ -88,8 +118,8 @@ class HomePage extends Component {
                                             <NavLink  to="/products"><span>we run on surveysparrow</span></NavLink>
                                         </div>
                                         <div className="maxeon-chatbox--conversation-footer ">
-                                            <input type="test" placeholder="Write a reply..." onKeyPress={(e) => this.SearchSubmit(e)} onClick={(e) => this.SearchSubmit(e)}/>
-                                            <div className="enter" id='enter'></div>
+                                            <input type="text" id="submitButton" value={this.state.inputValue} placeholder="Write a reply..." onKeyPress={(e) => this.SearchSubmit(e)} onChange={(e) => this.onChangeHandler(e)} />
+                                            <div className="enter" onClick={(e) => this.onClickButtonHandler(e)} id='enter'></div>
                                         </div>
                                     </div>
                                 }
