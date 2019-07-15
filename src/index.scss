@@ -1,0 +1,240 @@
+/************************************************************
+* @project Maxeon - Survey Sparrow Assignment
+* @author  Sangeetha D <sangeetadevaraj@gmail.com>
+* PARTIAL - Base scss file
+****************************************************************/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&display=swap');
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+.height-incresed{
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  transition: all ease 0.8s;
+  height: calc(100% - 120px);
+}
+.height-decreased{
+  height: calc(100% - 360px);
+}
+/**
+ * ----------------------------------------
+ * @animation text-shadow-drop-tr
+ * ----------------------------------------
+ */
+.text-shadow-drop-tr {
+	-webkit-animation: text-shadow-drop-tr 0.5s both;
+	        animation: text-shadow-drop-tr 0.5s both;
+}
+ @-webkit-keyframes text-shadow-drop-tr {
+  0% {
+    text-shadow: 0 0 0 rgba(236, 241, 251, 0);
+  }
+  100% {
+    text-shadow: 6px -6px 18px rgba(236, 241, 251, 0.2);
+  }
+}
+@keyframes text-shadow-drop-tr {
+  0% {
+    text-shadow: 0 0 0 rgba(236, 241, 251, 0);
+  }
+  100% {
+    text-shadow: 6px -6px 18px rgba(236, 241, 251, 0.2);
+  }
+}
+.slide-left {
+	-webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+}
+/**
+ * ----------------------------------------
+ * animation slide-right
+ * ----------------------------------------
+ */
+ .slide-right {
+	-webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+ @-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
+  }
+}
+.slide-righti {
+	-webkit-animation: slide-righti 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-righti 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+ @-webkit-keyframes slide-righti {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+@keyframes slide-righti {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+/**
+ * ----------------------------------------
+ * animation vibrate-1
+ * ----------------------------------------
+ */
+ @-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+/**
+ * ----------------------------------------
+ * animation slide-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+}
