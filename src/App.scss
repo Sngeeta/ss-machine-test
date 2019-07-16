@@ -291,11 +291,11 @@ p{
       background: $background-light;
     }
     .maxeon-chatbox--conversation{
-      overflow-y: scroll;
-      margin-bottom: 100px;
-      .maxeon-chatbox--conversation-box{
-        height: auto;
-      }
+      height: 280px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column-reverse;
+      margin-bottom: 90px;
       .maxeon-chatbox--conversation-left{
         overflow-wrap: break-word;
         word-wrap: break-word;

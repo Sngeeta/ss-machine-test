@@ -80,11 +80,9 @@ class HomePage extends Component {
 
     adviceslipResponse = () => {
         const { chats } = this.state;
-        const url = `https://api.adviceslip.com/advice`;
-
+        const url = `https://api.adviceslip.com/advice`; 
         // chat response is going to collect
         this.setState({ botInAction: true });
-
         axios.get(url)
         .then(response => {
             if (response.status === 200 && response.data && response.data.slip && response.data.slip.advice) {
